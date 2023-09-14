@@ -58,10 +58,10 @@ function addSchema(doc: OpenRPC, name: string, jsonPath: string) {
   const schema = JSON.parse(fileContent.toString())
 
   if (!("components" in doc)) {
-    doc["components"] = {"schemas": []}
+    doc["components"] = {"schemas": {}}
   }
 
-  doc["components"]["schemas"].push({[name]: schema})
+  doc["components"]["schemas"][name] = schema
   return doc;
 }
 
