@@ -95,5 +95,4 @@ doc = addMethods(doc, methodsPath)
 const schemasPath = path.join(cwd, 'components', 'schemas')
 doc = addSchemas(doc, schemasPath)
 
-
-console.dir(doc, {depth: null});
+console.log(JSON.stringify(doc, null, 2));
