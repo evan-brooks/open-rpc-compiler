@@ -29,38 +29,15 @@ Organize OpenRPC doc into files and directories and compile a complete OpenRPC d
 **./components/schemas/jointPosition.json**
 ```
 {
-    "name": "getPosition",
-    "description": "Get current joint positions",
-    "params": [],
-    "result": {
-        "name": "jointPositions",
-        "description": "updated joint positions",
-        "schema": {
-            "type": "array",
-            "items": {
-                "$ref": "#components/schemas/jointPosition"
-            }
+    "type": "object",
+    "properties": {
+        "jointIndex": {
+            "type": "integer"
+        },
+        "position": {
+            "type": "integer"
         }
-    },
-    "examples": [
-        {
-            "name": "getPosition",
-            "params": [],
-            "result": {
-                "name": "jointPositions",
-                "value": [
-                    {
-                        "jointIndex": 1,
-                        "position": 393
-                    },
-                    {
-                        "jointIndex": 5,
-                        "position": 1829
-                    }
-                ]
-            }
-        }
-    ]
+    }
 }
 ```
 ## Example Method File
