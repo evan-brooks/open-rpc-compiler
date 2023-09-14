@@ -3,7 +3,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-const OPENRPC_VERSION = '1.3.2';
+const OPENRPC_VERSION = '1.2.4';
 
 type OpenRPC = Record<string, any>
 
@@ -22,7 +22,7 @@ function addMethod(doc: OpenRPC, jsonPath: string, tag?: string) {
   const fileContent = fs.readFileSync(jsonPath)
   const method = JSON.parse(fileContent.toString())
   if (tag) {
-    method["tags"] = [tag]
+    method["tags"] = [{"name": tag}]
   }
   doc["methods"].push(method)
   return doc 
