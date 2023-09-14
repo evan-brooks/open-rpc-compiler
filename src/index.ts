@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 
-declare const __dirname: string;
-
 import * as fs from 'fs';
 import * as path from 'path';
+
+const OPENRPC_VERSION = '1.3.2';
 
 type OpenRPC = Record<string, any>
 
 let doc: OpenRPC = {
-  openrpc: '1.2.4',
+  openrpc: OPENRPC_VERSION,
 };
 
 function addInfo(doc: OpenRPC, jsonPath: string) {
@@ -87,13 +87,14 @@ function addSchemas(doc: OpenRPC, schemasDirectoryPath: string) {
 
 }
 
-const infoPath = path.join(__dirname, 'info.json')
+const cwd = process.cwd();
+const infoPath = path.join(cwd, 'info.json')
 doc = addInfo(doc, infoPath)
 
-const methodsPath = path.join(__dirname, 'methods')
+const methodsPath = path.join(cwd, 'methods')
 doc = addMethods(doc, methodsPath)
 
-const schemasPath = path.join(__dirname, 'components', 'schemas')
+const schemasPath = path.join(cwd, 'components', 'schemas')
 doc = addSchemas(doc, schemasPath)
 
 
