@@ -4,15 +4,17 @@ Organize OpenRPC doc into files and directories and compile a complete OpenRPC d
 
 ## Directory structure
 
-📂 openrpc/
-├── 📂 components/
-|   └─── 📂 schemas/
-│        └─── 📄 jointPosition.json
-│───📄 info.json
-└───📂 methods/
-    └── 📂 tags/
-         └── 📂 motion/
-              └── 📄 getJointPosition.json
+```
+📂 openrpc/  
+├── 📂 components/  
+|   └─── 📂 schemas/  
+│        └─── 📄 jointPosition.json  
+│───📄 info.json  
+└───📂 methods/  
+    └── 📂 tags/  
+         └── 📂 motion/  
+              └── 📄 getJointPosition.json  
+```
 
 ## Example Info file
 **./info.json**
