@@ -3,9 +3,9 @@
   "version": "1.0.1",
   "description": "Organize OpenRPC doc into files and directories and compile a complete OpenRPC document",
   "bin": {
-    "open-rpc-compile": "./src/index.ts"
+    "open-rpc-compile": "./dist/index.js"
   },
-  "main": "./src/index.ts",
+  "main": "./dist/index.js",
   "scripts": {
     "build": "tsc",
     "compile": "open-rpc-compiler"
@@ -23,5 +23,12 @@
   "bugs": {
     "url": "https://github.com/evan-brooks/open-rpc-compiler/issues"
   },
-  "homepage": "https://github.com/evan-brooks/open-rpc-compiler#readme"
+  "homepage": "https://github.com/evan-brooks/open-rpc-compiler#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.0"
+  }
 }
