@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 declare const __dirname: string;
 
 import * as fs from 'fs';

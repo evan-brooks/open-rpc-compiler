@@ -1,11 +1,14 @@
 {
   "name": "open-rpc-compiler",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Organize OpenRPC doc into files and directories and compile a complete OpenRPC document",
-  "main": "./dist/index.ts",
+  "bin": {
+    "open-rpc-compile": "./src/index.ts"
+  },
+  "main": "./src/index.ts",
   "scripts": {
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "open-rpc-compiler"
   },
   "repository": {
     "type": "git",
