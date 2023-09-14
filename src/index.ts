@@ -54,17 +54,14 @@ function addMethods(doc: OpenRPC, methodsDirectoryPath: string, tag?: string) {
 }
 
 function addSchema(doc: OpenRPC, name: string, jsonPath: string) {
-  console.log("add schema")
   const fileContent = fs.readFileSync(jsonPath)
   const schema = JSON.parse(fileContent.toString())
-  console.log(schema)
 
   if (!("components" in doc)) {
     doc["components"] = {"schemas": []}
   }
 
   doc["components"]["schemas"].push({[name]: schema})
-  console.log(doc["components"])
   return doc;
 }
 
@@ -74,7 +71,6 @@ function addSchemas(doc: OpenRPC, schemasDirectoryPath: string) {
     const files = fs.readdirSync(schemasDirectoryPath)
 
     files.forEach(fileName => {
-      console.log(fileName)
       const fullPath = path.join(schemasDirectoryPath, fileName);
 
       const stats = fs.statSync(fullPath)
