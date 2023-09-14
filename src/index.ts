@@ -36,7 +36,6 @@ function addMethods(doc: OpenRPC, methodsDirectoryPath: string, tag?: string) {
 
     files.forEach(fileName => {
       const fullPath = path.join(methodsDirectoryPath, fileName);
-      console.log(fullPath)
 
       const stats = fs.statSync(fullPath)
 
@@ -70,7 +69,6 @@ function addSchemas(doc: OpenRPC, schemasDirectoryPath: string) {
 
     files.forEach(fileName => {
       const fullPath = path.join(schemasDirectoryPath, fileName);
-      console.log(fullPath)
 
       const stats = fs.statSync(fullPath)
 
