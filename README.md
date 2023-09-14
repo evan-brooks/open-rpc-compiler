@@ -65,6 +65,7 @@ Organize OpenRPC doc into files and directories and compile a complete OpenRPC d
 ```
 ## Example Method File
 Note, by placing a method file inside a tags subdirectory, the name of the subdirectory will be assigned as a tag for the method.
+
 **./methods/tags/motion/getJointPosition.json**
 ```
 {
