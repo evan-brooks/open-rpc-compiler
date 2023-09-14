@@ -1,6 +1,6 @@
 {
   "name": "open-rpc-compiler",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Organize OpenRPC doc into files and directories and compile a complete OpenRPC document",
   "bin": {
     "open-rpc-compile": "./dist/index.js"
