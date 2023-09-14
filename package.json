@@ -1,0 +1,24 @@
+{
+  "name": "open-rpc-compiler",
+  "version": "1.0.0",
+  "description": "Organize OpenRPC doc into files and directories and compile a complete OpenRPC document",
+  "main": "./dist/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evan-brooks/open-rpc-compiler.git"
+  },
+  "keywords": [
+    "OpenRPC",
+    "open-rpc"
+  ],
+  "author": "Evan Brooks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evan-brooks/open-rpc-compiler/issues"
+  },
+  "homepage": "https://github.com/evan-brooks/open-rpc-compiler#readme"
+}

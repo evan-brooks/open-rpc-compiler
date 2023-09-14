@@ -1,0 +1,37 @@
+# Dependency directories
+node_modules/
+
+# TypeScript build output
+dist/
+build/
+out/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Editor directories
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# TypeScript type definitions
+*.d.ts
+*.tsbuildinfo
+
+# Environment configuration
+.env
+.env.local
+
+# Yarn Integrity file
+.yarn-integrity
