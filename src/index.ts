@@ -19,6 +19,9 @@ function addInfo(doc: OpenRPC, jsonPath: string) {
 }
 
 function addMethod(doc: OpenRPC, jsonPath: string, tag?: string) {
+  if (!("methods" in doc)) {
+    doc["methods"] = []
+  }
   const fileContent = fs.readFileSync(jsonPath)
   const method = JSON.parse(fileContent.toString())
   if (tag) {
@@ -29,8 +32,6 @@ function addMethod(doc: OpenRPC, jsonPath: string, tag?: string) {
 }
 
 function addMethods(doc: OpenRPC, methodsDirectoryPath: string, tag?: string) {
-  doc["methods"] = []
-
   try {
     const files = fs.readdirSync(methodsDirectoryPath)
 
@@ -53,21 +54,27 @@ function addMethods(doc: OpenRPC, methodsDirectoryPath: string, tag?: string) {
 }
 
 function addSchema(doc: OpenRPC, name: string, jsonPath: string) {
+  console.log("add schema")
   const fileContent = fs.readFileSync(jsonPath)
   const schema = JSON.parse(fileContent.toString())
+  console.log(schema)
 
-  doc["components"]["schemas"][name] = schema
-  return doc 
+  if (!("components" in doc)) {
+    doc["components"] = {"schemas": []}
+  }
+
+  doc["components"]["schemas"].push({[name]: schema})
+  console.log(doc["components"])
+  return doc;
 }
 
 function addSchemas(doc: OpenRPC, schemasDirectoryPath: string) {
-  doc["components"] = []
-  doc["components"]["schemas"] = []
 
   try {
     const files = fs.readdirSync(schemasDirectoryPath)
 
     files.forEach(fileName => {
+      console.log(fileName)
       const fullPath = path.join(schemasDirectoryPath, fileName);
 
       const stats = fs.statSync(fullPath)
